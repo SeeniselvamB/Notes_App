@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Notes App",
+    "slug": "notes-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Notes.jpg",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/Notes.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/Notes.jpg",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.seeniselvam.notesappy"
+    },
+    "web": {
+      "favicon": "./assets/Notes.jpg"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a2c3e430-e8ab-471c-a916-eed46fa09c8f"
+      }
+    }
+  }
+}
