@@ -74,7 +74,7 @@ npx expo start
 
 ---
 
-## 📦 Build APK
+## Build APK
 
 ```bash
 eas build -p android --profile preview
@@ -117,6 +117,6 @@ src/
 
 ---
 
-## 📄 License
+## License
 
 This project is available for educational and personal use.
