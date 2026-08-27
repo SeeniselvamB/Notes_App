@@ -7,7 +7,7 @@ import {
     StyleSheet,
     ScrollView,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons as Icon } from '@expo/vector-icons';
 
 const FilterBar = ({
     searchTerm,
@@ -27,7 +27,7 @@ const FilterBar = ({
         <View style={styles.container}>
             {/* Search Bar */}
             <View style={styles.searchContainer}>
-                <Icon name="search" size={20} color="#9CA3AF" style={styles.searchIcon} />
+                
                 <TextInput
                     style={styles.searchInput}
                     placeholder="Search notes..."
@@ -37,7 +37,6 @@ const FilterBar = ({
                 />
                 {searchTerm.length > 0 && (
                     <TouchableOpacity onPress={() => onSearchChange('')} style={styles.clearButton}>
-                        <Icon name="clear" size={20} color="#9CA3AF" />
                     </TouchableOpacity>
                 )}
             </View>
@@ -59,11 +58,7 @@ const FilterBar = ({
                             ]}
                             activeOpacity={0.7}
                         >
-                            <Icon
-                                name={icon}
-                                size={18}
-                                color={activeFilter === key ? '#3B82F6' : '#6B7280'}
-                            />
+                            
                             <Text
                                 style={[
                                     styles.filterText,

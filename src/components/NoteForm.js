@@ -10,10 +10,10 @@ import {
     KeyboardAvoidingView,
     Platform,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons as Icon } from '@expo/vector-icons';
 
 // Categories and Priorities
-const categories = ['General', 'Work', 'Personal', 'Ideas', 'Projects', 'Shopping'];
+const categories = ['General', 'Work', 'Personal'];
 const priorities = [
     { key: 'low', label: 'Low', color: '#10B981' },
     { key: 'medium', label: 'Medium', color: '#F59E0B' },
@@ -110,9 +110,8 @@ export default function NoteForm({ note, isVisible, onClose, onSave }) {
                                 style={styles.picker}
                                 onPress={() => setShowCategoryPicker(!showCategoryPicker)}
                             >
-                                <Icon name="local-offer" size={20} color="#3B82F6" />
+                                
                                 <Text style={styles.pickerText}>{category}</Text>
-                                <Icon name="keyboard-arrow-down" size={20} color="#6B7280" />
                             </TouchableOpacity>
 
                             {showCategoryPicker && (
@@ -150,13 +149,9 @@ export default function NoteForm({ note, isVisible, onClose, onSave }) {
                                 style={styles.picker}
                                 onPress={() => setShowPriorityPicker(!showPriorityPicker)}
                             >
-                                <Icon
-                                    name="priority-high"
-                                    size={20}
-                                    color={priorities.find((p) => p.key === priority)?.color}
-                                />
+                                
                                 <Text style={styles.pickerText}>{priority}</Text>
-                                <Icon name="keyboard-arrow-down" size={20} color="#6B7280" />
+                                
                             </TouchableOpacity>
 
                             {showPriorityPicker && (
@@ -195,7 +190,7 @@ export default function NoteForm({ note, isVisible, onClose, onSave }) {
                             style={styles.contentInput}
                             value={content}
                             onChangeText={setContent}
-                            placeholder="Write your note content here..."
+                            placeholder="Write your content here..."
                             placeholderTextColor="#9CA3AF"
                             multiline
                             textAlignVertical="top"

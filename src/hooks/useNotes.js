@@ -33,27 +33,6 @@ export const useNotes = () => {
             console.error('Error saving notes:', err);
         }
     }, []);
-
-    // const addNote = useCallback(async (noteData) => {
-    //     try {
-    //         const newNote = {
-    //             id: Date.now().toString(),
-    //             title: noteData.title || '',
-    //             content: noteData.content || '',
-    //             status: 'active',
-    //             category: noteData.category || 'General',
-    //             priority: noteData.priority || 'medium',
-    //             createdAt: new Date(),
-    //         };
-
-    //         const updatedNotes = [newNote, ...notes];
-    //         setNotes(updatedNotes);
-    //         await saveNotesToStorage(updatedNotes);
-    //     } catch (err) {
-    //         setError('Failed to add note');
-    //         console.error('Error adding note:', err);
-    //     }
-    // }, [notes, saveNotesToStorage]);
     const addNote = useCallback(async (noteData) => {
         try {
             const newNote = {
@@ -68,7 +47,7 @@ export const useNotes = () => {
                 repeatDays: noteData.repeatDays || [], // ⬅️ added
             };
 
-            const updatedNotes = [newNote, ...notes];
+            const updatedNotes = [...notes, newNote];
             setNotes(updatedNotes);
             await saveNotesToStorage(updatedNotes);
 

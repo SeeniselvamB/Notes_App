@@ -4,11 +4,11 @@
     "slug": "notes-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/Notes.jpg",
+    "icon": "./assets/Notes.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/Notes.jpg",
+      "image": "./assets/Notes.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,14 +17,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/Notes.jpg",
+        "foregroundImage": "./assets/Notes.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.seeniselvam.notesappy"
     },
     "web": {
-      "favicon": "./assets/Notes.jpg"
+      "favicon": "./assets/Notes.png"
     },
     "extra": {
       "eas": {

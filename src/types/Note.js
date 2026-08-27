@@ -1,21 +1,3 @@
-// export interface Note {
-//     id: string;
-//     title: string;
-//     content: string;
-//     status: 'active' | 'complete';
-//     category: string;
-//     createdAt: Date;
-//     completedAt?: Date;
-//     priority: 'low' | 'medium' | 'high';
-// }
-
-// export type FilterType = 'all' | 'active' | 'complete';
-
-// export interface NoteCounts {
-//     all: number;
-//     active: number;
-//     complete: number;
-// }
 
 
 /**

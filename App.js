@@ -3,14 +3,13 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
   StatusBar,
   FlatList,
   Alert,
   RefreshControl,
   ActivityIndicator,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { useNotes } from './src/hooks/useNotes';
 import NoteCard from './src/components/NoteCard';
@@ -144,16 +143,12 @@ function App() {
       <View style={styles.header}>
         <View style={styles.headerContent}>
           <View style={styles.headerLeft}>
-            <View style={styles.iconContainer}>
-              <Icon name="book" size={24} color="#FFFFFF" />
-            </View>
             <View>
               <Text style={styles.headerTitle}>Interactive Notes</Text>
             </View>
           </View>
 
           <View style={styles.headerRight}>
-            <Icon name="auto-awesome" size={16} color="#6B7280" />
             <Text style={styles.totalCount}>
               {noteCounts.all} Total Notes
             </Text>

@@ -5,7 +5,7 @@ import {
     TouchableOpacity,
     StyleSheet,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+
 
 const EmptyState = ({ searchTerm, activeFilter, onAddNote }) => {
     const isFiltered = searchTerm || activeFilter !== 'all';
@@ -13,13 +13,6 @@ const EmptyState = ({ searchTerm, activeFilter, onAddNote }) => {
     return (
         <View style={styles.container}>
             <View style={styles.content}>
-                <View style={styles.iconContainer}>
-                    <Icon
-                        name={isFiltered ? 'search-off' : 'note-add'}
-                        size={64}
-                        color="#D1D5DB"
-                    />
-                </View>
 
                 <Text style={styles.title}>
                     {isFiltered ? 'No notes found' : 'Start your journey'}
@@ -37,7 +30,7 @@ const EmptyState = ({ searchTerm, activeFilter, onAddNote }) => {
                         onPress={onAddNote}
                         activeOpacity={0.8}
                     >
-                        <Icon name="add" size={20} color="#FFFFFF" />
+                        
                         <Text style={styles.buttonText}>Create Your First Note</Text>
                     </TouchableOpacity>
                 )}

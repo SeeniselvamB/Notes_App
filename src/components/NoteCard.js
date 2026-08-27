@@ -6,7 +6,7 @@ import {
     StyleSheet,
     Dimensions,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons as Icon } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
 const cardWidth = (width - 48) / 2; // 2 columns with padding
@@ -49,10 +49,11 @@ const NoteCard = ({ note, onToggleStatus, onEdit, onDelete }) => {
                 activeOpacity={0.7}
             >
                 <Icon
-                    name={isComplete ? 'check-circle' : 'radio-button-unchecked'}
-                    size={20}
-                    color={isComplete ? '#FFFFFF' : '#9CA3AF'}
+                    name={isComplete ? 'check' : 'radio-button-unchecked'}
+                    size={18}
+                    color={isComplete ? '#FFFFFF' : '#6B7280'}
                 />
+
             </TouchableOpacity>
 
             {/* Priority Indicator */}
@@ -62,11 +63,7 @@ const NoteCard = ({ note, onToggleStatus, onEdit, onDelete }) => {
                     { backgroundColor: getPriorityColor(note.priority) + '20' },
                 ]}
             >
-                <Icon
-                    name="priority-high"
-                    size={12}
-                    color={getPriorityColor(note.priority)}
-                />
+
                 <Text
                     style={[
                         styles.priorityText,
@@ -85,21 +82,20 @@ const NoteCard = ({ note, onToggleStatus, onEdit, onDelete }) => {
             >
                 <Text
                     style={[styles.title, isComplete && styles.completedText]}
-                    numberOfLines={2}
+                    numberOfLines={1}
                 >
                     {note.title}
                 </Text>
 
                 <Text
                     style={[styles.contentText, isComplete && styles.completedText]}
-                    numberOfLines={3}
+                    numberOfLines={4}
                 >
                     {note.content}
                 </Text>
 
                 {/* Category */}
                 <View style={styles.categoryContainer}>
-                    <Icon name="local-offer" size={14} color="#3B82F6" />
                     <Text style={styles.categoryText}>{note.category}</Text>
                 </View>
 
@@ -118,14 +114,14 @@ const NoteCard = ({ note, onToggleStatus, onEdit, onDelete }) => {
                     onPress={() => onEdit(note)}
                     activeOpacity={0.7}
                 >
-                    <Icon name="edit" size={18} color="#6B7280" />
+                    <Icon name="edit" size={20} color="#3B82F6" />
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.actionButton}
                     onPress={() => onDelete(note.id)}
                     activeOpacity={0.7}
                 >
-                    <Icon name="delete" size={18} color="#EF4444" />
+                    <Icon name="delete" size={20} color="#EF4444" />
                 </TouchableOpacity>
             </View>
         </View>
@@ -135,23 +131,19 @@ const NoteCard = ({ note, onToggleStatus, onEdit, onDelete }) => {
 const styles = StyleSheet.create({
     container: {
         width: cardWidth,
+        minHeight: 250,
+        maxHeight: 250,
         borderRadius: 16,
-        padding: 16,
-        marginBottom: 16,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 4,
-        borderWidth: 1,
-        borderColor: '#E5E7EB',
+        padding: 10,
+        marginTop: 15,
+        marginRight: 10,
     },
     statusButton: {
         position: 'absolute',
-        top: -8,
-        right: -8,
-        width: 32,
-        height: 32,
+        top: 5,
+        right: 5,
+        width: 25,
+        height: 25,
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
@@ -165,7 +157,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         alignSelf: 'flex-start',
-        paddingHorizontal: 8,
+        paddingHorizontal: 4,
         paddingVertical: 4,
         borderRadius: 12,
         marginBottom: 12,
